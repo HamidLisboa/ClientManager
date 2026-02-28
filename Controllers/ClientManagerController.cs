@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using ClientManager.Services;
+using ClientManager.Models;
 
 namespace ClientManager.Controllers;
 
@@ -6,17 +8,22 @@ namespace ClientManager.Controllers;
 [Route("[controller]")]
 public class ClientManagerController : ControllerBase
 {
-    private static readonly string[] Clients = new[]
+    public ClientManagerController()
     {
         
-    };
-
-    private readonly ILogger<ClientManagerController> _logger;
-
-    public ClientManagerController(ILogger<ClientManagerController> logger)
-    {
-        _logger = logger;
     }
 
-   
+    [HttpGet]
+    public ActionResult<List<Client>> GetAll()
+    {
+        return ClientServices.GetAll();
+	}
+    [HttpGet("{id}")]
+    public ActionResult<Client> GetClient(int id)
+    {
+        var client = ClientServices.GetClient(id);
+        if (client is null)
+            return NotFound();
+        return client;
+	}
 }

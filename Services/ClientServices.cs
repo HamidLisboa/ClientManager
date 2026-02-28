@@ -1,4 +1,4 @@
-﻿using ClientManager.Model;
+﻿using ClientManager.Models;
 
 namespace ClientManager.Services
 {

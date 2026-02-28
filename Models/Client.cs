@@ -1,4 +1,4 @@
-﻿namespace ClientManager.Model
+﻿namespace ClientManager.Models
 {
     public class Client
     {
