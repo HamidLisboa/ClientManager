@@ -1,6 +1,6 @@
 @ClientManager_HostAddress = http://localhost:5233
 
-GET {{ClientManager_HostAddress}}/ClientManager/
+GET {{ClientManager_HostAddress}}/ClientManager/30
 Accept: application/json
 
 ###
