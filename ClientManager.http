@@ -1,6 +1,33 @@
 @ClientManager_HostAddress = http://localhost:5233
 
-GET {{ClientManager_HostAddress}}/ClientManager/30
-Accept: application/json
+GET {{ClientManager_HostAddress}}/ClientManager/10
 
+
+###
+
+POST {{ClientManager_HostAddress}}/ClientManager
+Content-Type: application/json
+{
+  "id": 8,
+  "firstName": "John",
+  "lastName" : "Doe",
+  "age": 30,
+  "email": "john.doe@it.pt",
+  "phoneNumber": "123456789"
+}
+
+###
+DELETE {{ClientManager_HostAddress}}/ClientManager/3
+
+###
+PUT {{ClientManager_HostAddress}}/ClientManager/6
+Content-Type: application/json
+{
+  "id": 6,
+    "firstName": "Carla",
+    "lastName": "Pereira",
+    "age": 29,
+    "email": "carlapereira@it.pt",
+    "phoneNumber": "919444444"
+}
 ###
